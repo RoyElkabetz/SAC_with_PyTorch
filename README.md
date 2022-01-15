@@ -7,7 +7,7 @@ You can see below the learning curves along with gifs of SAC agents (trained wit
 <img src="assets/SAC_InvertedDoublePendulumBulletEnv-v0__gamma_0.99__alpha_0.0003__beta_0.0003__fc1_256__fc2_256__bs_256__buffer_100000__update_period_2__tau_0.005__.png" width="" height="240"> ![](assets/TrainedInvertedDoublePendulumAgentGif.gif)
 
 
-<img src="assets/SAC_InvertedDoublePendulumBulletEnv-v0__gamma_0.99__alpha_0.0003__beta_0.0003__fc1_256__fc2_256__bs_256__buffer_100000__update_period_2__tau_0.005__.png" width="" height="240"> ![](assets/TrainedInvertedDoublePendulumAgentGif.gif)
+<img src="assets/SAC_InvertedPendulumSwingupBulletEnv-v0__gamma_0.99__alpha_0.0003__beta_0.0003__fc1_256__fc2_256__bs_256__buffer_100000__update_period_2__tau_0.005__.png" width="" height="240"> ![](assets/TrainedInvertedPendulumSwingupAgentGif.gif)
 
 
 
