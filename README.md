@@ -1,4 +1,4 @@
-# SAC with PyTorch
+# Soft Actor Critic (SAC) with PyTorch
 
 This repo contains a PyTorch implementation of the Deep Reinforcement Learning algorithm Soft Actor Critic (SAC), as described in the paper [Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor](https://arxiv.org/abs/1801.01290) (2018)
 
