@@ -1,4 +1,4 @@
-# SAC_with_PyTorch
+# SAC with PyTorch
 
 This repo contains a PyTorch implementation of the Deep Reinforcement Learning algorithm Soft Actor Critic (SAC), as described in the original paper:
 
@@ -40,7 +40,7 @@ This repo contains a PyTorch implementation of the Deep Reinforcement Learning a
 
 
 
-## API
+## Command Line API
 
 You should run the `main.py` file with the following arguments:
 
