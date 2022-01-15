@@ -105,6 +105,14 @@ python3 main.py -n_games 5 -monitor True -play True -load_checkpoint True -env_n
 ### Notes
 1. In order to load a saved checkpoint, the networks should be in the `tmp\name_of_env` directory, with the next names: Actor, Critic_1, Critic_2, Value and Target_Value.
 2. For some reason the PyBullet environmets do not work when called with PyBullet instead of Bullet (i.e. use `InvertedDoublePendulumBulletEnv-v0` and not `InvertedDoublePendulumPyBulletEnv-v0`).
+3. The current networks for the environments in the `tmp` folder belong to trained agents. You can play with them by running the next code in comman line 
+```text
+python3 main.py -n_games 5 -play True -load_checkpoint True -gpu_to_cpy True -env_name InvertedDoublePendulumBulletEnv-v0
+```
+
+```text
+python3 main.py -n_games 5 -play True -load_checkpoint True -gpu_to_cpy True -env_name InvertedPendulumSwingupBulletEnv-v0
+```
 
 
 ## Reference
