@@ -39,7 +39,7 @@ if __name__ == '__main__':
                         help='The scale for the rewards as written in the paper (exploration / exploitation parameter)')
     parser.add_argument('-warmup', type=int, default=100,
                         help='Number of transitions passes before start learning')
-    parser.add_argument('-warmup', type=float, default=1e-6,
+    parser.add_argument('-reparam_noise_lim', type=float, default=1e-6,
                         help='The lower limit of the reparametrization noise (the upper limit is hardcoded to 1.)')
     parser.add_argument('-n_games', type=int, default=500,
                         help='Number of games / episodes')
@@ -72,14 +72,14 @@ if __name__ == '__main__':
     scores, avg_scores = [], []
     best_score = -np.inf
 
+    if args.play:
+        env.render(mode='human')
+
     if args.monitor:
         env = wrappers.Monitor(env, os.path.join(args.dir, args.env_name),
                                video_callable=lambda episode_id: True, force=True)
     if args.load_checkpoint:
         agent.load_model(gpu_to_cpu=args.gpu_to_cpu)
-
-    if args.play:
-        env.render(mode='human')
 
     for game in range(args.n_games):
         observation = env.reset()

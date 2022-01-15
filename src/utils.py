@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def plot_learning_curve(x, filename, save_plot=True, folder_path='tmp/'):
+def plot_learning_curve(x, filename, save_plot=True):
     avg_x = [np.mean(x[np.max([0, i - 100]):i]) for i in range(len(x))]
     plt.figure(dpi=200)
     plt.title('Learning Curve')
@@ -13,5 +13,5 @@ def plot_learning_curve(x, filename, save_plot=True, folder_path='tmp/'):
     plt.legend()
     plt.grid()
     if save_plot:
-        plt.savefig(folder_path + filename + '.png')
+        plt.savefig(filename + '.png')
     plt.show()
