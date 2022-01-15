@@ -47,7 +47,7 @@ You can see below the learning curves along with gifs of SAC agents (trained wit
 
 | #   | file            | Subject                                         | Colab             | Nbviewer               |
 |:----:|:--------------:|:------------------------------------------------:|:-----------------:|:---------------------:|
-| 1   | `SAC_notebook.ipynb` | Notebook to run on Colab with GPU   | [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/RoyElkabetz/SAC_with_PyTorch/blob/main/src/SAC_notebook.ipynb#scrollTo=1ZaWTp5Ufczm)        | [![nbviewer](https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg)]()|
+| 1   | `SAC_notebook.ipynb` | Notebook to run on Colab with GPU   | [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/RoyElkabetz/SAC_with_PyTorch/blob/main/src/SAC_notebook.ipynb#scrollTo=1ZaWTp5Ufczm)        | [![nbviewer](https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg)](https://nbviewer.org/github/RoyElkabetz/SAC_with_PyTorch/blob/main/src/SAC_notebook.ipynb)|
 
 
 ## Command Line API
