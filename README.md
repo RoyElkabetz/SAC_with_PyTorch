@@ -2,9 +2,13 @@
 
 This repo contains a PyTorch implementation of the Deep Reinforcement Learning algorithm Soft Actor Critic (SAC), as described in the paper [Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor](https://arxiv.org/abs/1801.01290) (2018)
 
-You can see below the learning curve along with a gif of a SAC agent (trained with this code) plays the Inverted Double Pendulum environment of PyBullet.
+You can see below the learning curves along with gifs of SAC agents (trained with this code) play the Inverted Double Pendulum and Inverted Pendulum Swing environments of PyBullet.
 
 <img src="assets/SAC_InvertedDoublePendulumBulletEnv-v0__gamma_0.99__alpha_0.0003__beta_0.0003__fc1_256__fc2_256__bs_256__buffer_100000__update_period_2__tau_0.005__.png" width="" height="240"> ![](assets/TrainedInvertedDoublePendulumAgentGif.gif)
+
+
+<img src="assets/SAC_InvertedDoublePendulumBulletEnv-v0__gamma_0.99__alpha_0.0003__beta_0.0003__fc1_256__fc2_256__bs_256__buffer_100000__update_period_2__tau_0.005__.png" width="" height="240"> ![](assets/TrainedInvertedDoublePendulumAgentGif.gif)
+
 
 
 ## Requirements
@@ -101,6 +105,14 @@ python3 main.py -n_games 5 -monitor True -play True -load_checkpoint True -env_n
 ### Notes
 1. In order to load a saved checkpoint, the networks should be in the `tmp\name_of_env` directory, with the next names: Actor, Critic_1, Critic_2, Value and Target_Value.
 2. For some reason the PyBullet environmets do not work when called with PyBullet instead of Bullet (i.e. use `InvertedDoublePendulumBulletEnv-v0` and not `InvertedDoublePendulumPyBulletEnv-v0`).
+3. The current networks for the environments in the `tmp` folder belong to trained agents. You can play with them by running the next code in comman line 
+```text
+python3 main.py -n_games 5 -play True -load_checkpoint True -gpu_to_cpy True -env_name InvertedDoublePendulumBulletEnv-v0
+```
+
+```text
+python3 main.py -n_games 5 -play True -load_checkpoint True -gpu_to_cpy True -env_name InvertedPendulumSwingupBulletEnv-v0
+```
 
 
 ## Reference
