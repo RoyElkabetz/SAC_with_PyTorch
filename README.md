@@ -45,28 +45,6 @@ This repo contains a PyTorch implementation of the Deep Reinforcement Learning a
 You should run the `main.py` file with the following arguments:
 
 
-
-
-
-    
-   
-    
-    
-
-   
-    
-    
-    
-    
-    
-    
-    
-    parser.add_argument('-monitor', type=bool, default=False,
-                        help='If True, a video is being saved for each episode')
-
-
-
-
 |Argument             | Description                                                                                   |
 |---------------------|-----------------------------------------------------------------------------------------------|
 |`-play`              | Choosing the mode of the agent, False for learning or True for playing and render to screen   |
@@ -91,40 +69,44 @@ You should run the `main.py` file with the following arguments:
 
 
 ## Training and Playing
-- Training a DuelingDDQN agent from scratch for 400 games
+- Training a SAC agent on the *InvertedDoublePendulumBulletEnv-v0* environment with defualt arguments as stated in the SAC paper [1]
 
 ```text
-python main.py -n_games 400 -algo 'DuelingDDQNAgent' -train True
+python3 main.py
+``` 
+- Training a SAC agent on the *InvertedPendulumBulletEnv-v0* for 400 games with memory buffer size of 10000, batch size of 32 and warmup of 300 learning steps
+
+```text
+python3 main.py -memory_size 10000 -batch_size 32 -warmup 300 -n_games 400 -env_name InvertedDoublePendulumBulletEnv-v0
 ``` 
 
-- Training a DDQN agent from checkpoint (if exist) for 30 games with epsilon=0.2 and batch size of 64
+- Training a SAC agent from checkpoint for 100 games
 
 ```text
-python main.py -n_games 30 -algo 'DDQNAgent' -load_checkpoint True -epsilon 0.2 -bs 64 -train True
+python3 main.py -n_games 400 -load_checkpoint True
+``` 
+
+- Playing a single game of *InvertedPendulumBulletEnv-v0* (and render it to the screen) with an untrained agent 
+
+```text
+python3 main.py -n_games 1 -play True -env_name InvertedPendulumBulletEnv-v0
 ```
 
-- Playing 10 games with a saved DQN agent checkpoint using a deterministic policy (epsilon=0), render to screen and save as a video
+- Playing 5 games of *InvertedDoublePendulumBulletEnv-v0* with a trained agent and save the video
 
 ```text
-python main.py -n_games 10 -algo 'DQNAgent' -load_checkpoint True -epsilon 0.0 -eps_min 0.0 -render True -monitor True
-```
-
-- Playing 5 games with an untrained DuelingDQN agent using an epsilon-greedy policy with epsilon=0.2 and render to screen
-
-```text
-python main.py -n_games 5 -algo 'DuelingDQNAgent' -epsilon 0.2 -eps_dec 0.0 -render True -monitor True
+python3 main.py -n_games 5 -monitor True -play True -load_checkpoint True -env_name InvertedDoublePendulumBulletEnv-v0
 ```
 
 **Notes:**
-- If training from checkpoint, the agent also upload previous saved scores, steps and epsilon arrays, such that the training process continues from where it stopped.
-- For playing with an agent using an epsilon-greedy policy with some specific epsilon (i.e 0.1), you need to set eps_dec=0.0 (-eps_dec 0.0). Otherwise, epsilon would get smaller at each step by the eps_dec value. 
+In order to load a saved checkpoint, the networks should be in the `tmp\name_of_env` path with the next names: Actor, Critic_1, Critic_2, Value and Target_Value.
 
 
 ## Reference
 
-[1]  [Human-level control through deep reinforcement learning](https://www.nature.com/articles/nature14236) (2015)
+[1]  [Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor](https://arxiv.org/abs/1801.01290) (2018)
 
-[2]  [Modern Reinforcement Learning: Deep Q Learning in PyTorch Course - Phil Tabor](https://www.udemy.com/course/deep-q-learning-from-paper-to-code/) (great comprehensive course about DQN algorithms)
+[2]  [Modern Reinforcement Learning: Actor Critic algorithms Course - Phil Tabor](https://www.udemy.com/course/actor-critic-methods-from-paper-to-code-with-pytorch/) (great comprehensive course about Actor Critic algorithms)
 
 
  
