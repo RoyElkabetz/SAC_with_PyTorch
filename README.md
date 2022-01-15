@@ -25,7 +25,7 @@ This repo contains a PyTorch implementation of the Deep Reinforcement Learning a
 |------------------|--------------------------------------------------------------------|
 |`src`             | All `.py` sourch files                                             |
 |`tmp `            | A temporary file for results savings                               |
-|`assets`          | Non-code relevant files like videos, pictures, etc                 |
+|`assets`          | Non-code related files like videos, pictures, etc                 |
 
 
 ### Files
@@ -44,26 +44,50 @@ This repo contains a PyTorch implementation of the Deep Reinforcement Learning a
 
 You should run the `main.py` file with the following arguments:
 
+
+
+
+
+    
+   
+    
+    
+
+   
+    
+    
+    
+    
+    
+    
+    
+    parser.add_argument('-monitor', type=bool, default=False,
+                        help='If True, a video is being saved for each episode')
+
+
+
+
 |Argument             | Description                                                                                   |
 |---------------------|-----------------------------------------------------------------------------------------------|
-|`-train`             | Determine the agents mode, True=training or False=playing, default=False                      |
+|`-play`              | Choosing the mode of the agent, False for learning or True for playing and render to screen   |
 |`-gamma`             | Discount factor for the update rule, default=0.99                                             |
-|`-epsilon`           | Initial epsilon value for the epsilon-greedy policy, default=1.0                              |
-|`-lr`                | The DQN training learning rate, default=0.0001                                                |
-|`-mem_size`          | The maximal memory size used for storing transitions (replay buffer), default=20000 (~ 6 GB RAM) |
-|`-bs`                | Batch size for sampling from the replay buffer, default=32                                    |
-|`-eps_min`           | Lower limit for epsilon, default=0.1                                                          |
-|`-eps_dec`           | Value for epsilon linear decrement, default=1e-5                                              |
-|`-replace`           | Number of learning steps for target network replacement, default=1000                         |
-|`-algo`              | choose from the next algorithms: `DQNAgent`, `DDQNAgent`, `DuelingDQNAgent`, `DuelingDDQNAgent`, default=`DQNAgent`|
-|`-env_name`          | choose from the next Atari environments: `PongNoFrameskip-v4`, `BreakoutNoFrameskip-v4`, `SpaceInvadersNoFrameskip-v4`, `EnduroNoFrameskip-v4`, `AtlantisNoFrameskip-v4`, default=`PongNoFrameskip-v4`        |
-|`-path`              | Path for loading and saving models, default='models/'                                         |
-|`-n_games`           | Number of games for the Agent to play, default=1                                              |
-|`-skip`              | Number of environment frames to stack, default=4                                              |
-|`-gpu`               | CPU: '0', GPU: '1', default='0'                                                               |
+|`-alpha`             | The Actor network learning rate                                                               |
+|`-beta`              | The Critic and Value networks learning rate                                                   |
+|`-fc1_dim`           | The dimension of the first Linear layer across all networks                                   |
+|`-fc2_dim`           | The dimension of the second Linear layer across all networks                                  |
+|`-memory_size`       | The Replay Buffer memory size                                                                 |
+|`-batch_size`        | The batch size                                                                                |
+|`-tau`               | The parameters update constant -- 1 for hard update, 0 for no update                          |
+|`-update_period`     | The period for updating the networks weights                                                  |
+|`-reward_scale`      | The scale factor for the rewards as written in the paper (exploration/exploitation parameter) |
+|`-warmup`            | Number of transitions passes before learning starts                                           |
+|`-reparam_noise_lim` | Lower limit of the reparametrization noise (the upper limit is hardcoded to 1.)               |
+|`-n_games`           | Number of games / episodes                                                                    |
+|`-env_name`          | The environment name, PyBullet or Gym                                                         |
 |`-load_checkpoint`   | Load a model checkpoint, default=False                                                        |
-|`-render`            | Render the game to screen ? True/False, default=False                                         |
-|`-monitor`           | If True, a video is being saved for each episode, default=False                               |
+|`-gpu_to_cpu`        | Load to a CPU a model that was trained on a GPU, set to True, else False                      |
+|`-dir`               | Path for loading and saving models and plots                                                  |
+|`-monitor`           | If True, a video is being saved for each episode (only if the ffmpeg package is installs)     |
 
 
 ## Training and Playing
