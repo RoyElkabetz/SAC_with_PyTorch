@@ -75,7 +75,7 @@ You should run the `main.py` file with the following arguments:
 |`-load_checkpoint`   | Load a model checkpoint, default=False                                                        |
 |`-gpu_to_cpu`        | Load to a CPU a model that was trained on a GPU, set to True, else False                      |
 |`-dir`               | Path for loading and saving models and plots                                                  |
-|`-monitor`           | If True, a video is being saved for each episode (only if the ffmpeg package is installs)     |
+|`-monitor`           | If True, a video is being saved for each episode (only if the ffmpeg package is installed)    |
 
 
 ## Training and Playing
