@@ -1,13 +1,13 @@
 # SAC with PyTorch
 
-This repo contains a PyTorch implementation of the Deep Reinforcement Learning algorithm Soft Actor Critic (SAC), as described in the original paper:
+This repo contains a PyTorch implementation of the Deep Reinforcement Learning algorithm Soft Actor Critic (SAC), as described in the paper [Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor](https://arxiv.org/abs/1801.01290) (2018)
 
-- [Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor](https://arxiv.org/abs/1801.01290) (2018)
+You can see below the learning curve along with a gif of a SAC agent (trained with this code) plays the Inverted Double Pendulum environment of PyBullet.
+
+<img src="assets/SAC_InvertedDoublePendulumBulletEnv-v0__gamma_0.99__alpha_0.0003__beta_0.0003__fc1_256__fc2_256__bs_256__buffer_100000__update_period_2__tau_0.005__.png" width="" height="240"> ![](assets/TrainedInvertedDoublePendulumAgentGif.gif)
 
 
-
-## Requirements and ROM installation
-
+## Requirements
 |Library         | Version |
 |----------------|---------|
 |`Python`        |  `3.8`  |
@@ -61,7 +61,7 @@ You should run the `main.py` file with the following arguments:
 |`-warmup`            | Number of transitions passes before learning starts                                           |
 |`-reparam_noise_lim` | Lower limit of the reparametrization noise (the upper limit is hardcoded to 1.)               |
 |`-n_games`           | Number of games / episodes                                                                    |
-|`-env_name`          | The environment name, PyBullet or Gym                                                         |
+|`-env_name`          | The environment name, PyBullet or Gym (see notes below)                                       |
 |`-load_checkpoint`   | Load a model checkpoint, default=False                                                        |
 |`-gpu_to_cpu`        | Load to a CPU a model that was trained on a GPU, set to True, else False                      |
 |`-dir`               | Path for loading and saving models and plots                                                  |
@@ -98,8 +98,9 @@ python3 main.py -n_games 1 -play True -env_name InvertedPendulumBulletEnv-v0
 python3 main.py -n_games 5 -monitor True -play True -load_checkpoint True -env_name InvertedDoublePendulumBulletEnv-v0
 ```
 
-**Notes:**
-In order to load a saved checkpoint, the networks should be in the `tmp\name_of_env` path with the next names: Actor, Critic_1, Critic_2, Value and Target_Value.
+### Notes
+1. In order to load a saved checkpoint, the networks should be in the `tmp\name_of_env` directory, with the next names: Actor, Critic_1, Critic_2, Value and Target_Value.
+2. For some reason the PyBullet environmets do not work when called with PyBullet instead of Bullet (i.e. use `InvertedDoublePendulumBulletEnv-v0` and not `InvertedDoublePendulumPyBulletEnv-v0`).
 
 
 ## Reference
