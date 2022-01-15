@@ -4,7 +4,9 @@ This repo contains a PyTorch implementation of the Deep Reinforcement Learning a
 
 - [Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor](https://arxiv.org/abs/1801.01290) (2018)
 
+You can see below the learning curve along with a gif of a SAC agent (trained with this code) plays the Inverted Double Pendulum environment of PyBullet.
 
+![](assets/TrainedInvertedDoublePendulumAgentGif.gif) ![](assets/SAC_InvertedDoublePendulumBulletEnv-v0__gamma_0.99__alpha_0.0003__beta_0.0003__fc1_256__fc2_256__bs_256__buffer_100000__update_period_2__tau_0.005__.png)
 
 ## Requirements and ROM installation
 
