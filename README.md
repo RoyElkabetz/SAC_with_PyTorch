@@ -34,14 +34,20 @@ You can see below the learning curves along with gifs of SAC agents (trained wit
 
 ### Files
 
-|File name         |                     Description                                    |
-|------------------|--------------------------------------------------------------------|
-|`main.py`         | General main application for training/playing a SAC based agent    |
-|`agents.py`       | Containing the SAc agent class                                     |
-|`networks.py`     | Networks in used by agents (Actor, Critic and Value networks)      |
-|`utils.py`        | General utility functions                                          |
-|`buffer.py`       | A replay buffer class, used for offline training                   |
+|File name            |                     Description                                    |
+|---------------------|--------------------------------------------------------------------|
+|`main.py`            | General main application for training/playing a SAC based agent    |
+|`agents.py`          | Containing the SAc agent class                                     |
+|`networks.py`        | Networks in used by agents (Actor, Critic and Value networks)      |
+|`utils.py`           | General utility functions                                          |
+|`buffer.py`          | A replay buffer class, used for offline training                   |
+|`SAC_notebook.ipynb` | A SAC notebook to run on Colab with GPU                            |
 
+### Notebook
+
+| #   | file            | Subject                                         | Colab             | Nbviewer               |
+|:----:|:--------------:|:------------------------------------------------:|:-----------------:|:---------------------:|
+| 1   | `SAC_notebook.ipynb` | Notebook to run on Colab with GPU   | [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/RoyElkabetz/SAC_with_PyTorch/blob/main/src/SAC_notebook.ipynb#scrollTo=1ZaWTp5Ufczm)        | [![nbviewer](https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg)]()|
 
 
 ## Command Line API
