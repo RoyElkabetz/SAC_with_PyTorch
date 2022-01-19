@@ -27,7 +27,10 @@ class ReplayBuffer:
             print('... Replay Buffer is full ...')
 
     def load_batch(self, batch_size):
-        samples = np.random.choice(np.arange(self.buffer_size), batch_size, replace=False)
+        if self.is_full:
+            samples = np.random.choice(np.arange(self.buffer_size), batch_size, replace=False)
+        else:
+            samples = np.random.choice(np.arange(self.ptr), batch_size, replace=False)
         states = self.states[samples]
         actions = self.actions[samples]
         rewards = self.rewards[samples]
