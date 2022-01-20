@@ -125,6 +125,7 @@ class Agent:
     def learn(self):
         # learns only after warmup iteration and when there is at least a single batch in buffer to load
         if self.learn_iter < self.warmup or self.learn_iter < self.batch_size:
+            self.learn_iter += 1
             return
 
         states, actions, rewards, states_, done = self.load_batch()
