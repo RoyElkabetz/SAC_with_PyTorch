@@ -102,7 +102,7 @@ if __name__ == '__main__':
         avg_scores.append(avg_score)
 
         print(f'| Game: {game:6.0f} | Score: {score:10.2f} | Best score: {best_score:10.2f} | '
-              f'Avg score {avg_score:10.2f} |')
+              f'Avg score {avg_score:10.2f} | Learning inter: {agent.learn_iter:14.0f} |')
 
         if avg_score > best_score:
             best_score = avg_score
